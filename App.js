@@ -1,21 +1,43 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { ImageBackground, ScrollView, StyleSheet, Text, TouchableNativeFeedbackBase, View, Image } from 'react-native';
 
 export default function App() {
+
+  const orange = () => {'#09faf4'}
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ScrollView>
+
+        <View style={styles.header}>          
+          <Text
+            style={{
+              color: 'black',
+              fontSize: 20,
+            }}>
+              <FontAwesome5 name="shoe-prints" size={30} color= 'black'/>
+                Con-Sole Footwear
+          </Text>
+        </View>
+
+        <View
+          >
+
+        </View>
+
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  header: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#09faf4',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+    width: '100%',
+    height: 180,
+    
+  }
 });
