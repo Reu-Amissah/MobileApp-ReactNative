@@ -1,43 +1,79 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { FontAwesome5 } from '@expo/vector-icons';
-import { ImageBackground, ScrollView, StyleSheet, Text, TouchableNativeFeedbackBase, View, Image } from 'react-native';
+import { Feather } from '@expo/vector-icons';
+import { ImageBackground, ScrollView, StyleSheet, Text, TouchableNativeFeedbackBase, View, Image, TouchableOpacity } from 'react-native';
 
 export default function App() {
 
   const orange = () => {'#09faf4'}
 
   return (
-    <ScrollView>
+  
+    <View style={styles.header}>  
 
-        <View style={styles.header}>          
-          <Text
-            style={{
-              color: 'black',
-              fontSize: 20,
-            }}>
-              <FontAwesome5 name="shoe-prints" size={30} color= 'black'/>
-                Con-Sole Footwear
-          </Text>
-        </View>
+      {/*Main Image*/}        
+      <Image 
+        source={require('./assets/clothes1.jpg')} 
+        style={{
+          width: '70%', 
+          height: 300, 
+          borderRadius: 20, 
+        }}></Image>
 
-        <View
-          >
+      {/*Welcome Text*/}
+      <Text 
+        style={{
+          // alignItems: 'center', 
+          // justifyContent: 'center', 
+          paddingHorizontal: 40,
+          marginTop: 60,
+          fontSize: 20,
+          color: '#7C8C8F',
+          marginBottom: 10,
+          marginLeft: -65,
+          }}>
+        Welcome to, {"\n"}
+        <Text style={{fontWeight: 'bold', fontSize: 40, color: 'black'}}>DezynMania</Text>
+      </Text>
+      <Text style={{fontSize: 18, color: '#7C8C8F', marginLeft: -35,}}>kindly <Text style={{color: 'black', fontWeight: 'bold'}}>login</Text>, lets get you suited</Text>
 
-        </View>
+      {/* <Text
+        style={{
+          color: 'black',
+          fontSize: 40,
+          fontWeight: 'bold',
+          paddingTop: 5, 
+          // borderBottomColor: '#6AA7B5',
+          // borderBottomWidth: 3,
+          // marginLeft: -80,
+        }}>
+          DezynMania
+      </Text> */}
 
-    </ScrollView>
+
+      {/*Login Button*/}
+      <TouchableOpacity 
+        style={{
+          marginTop: 70, 
+          backgroundColor: '#6AA7B5', 
+          paddingHorizontal: 20, 
+          paddingVertical: 10,
+          borderRadius: '25%',
+          width: '70%',
+          alignItems: 'center',
+          }}>
+        <Text style={{color: 'white', fontSize: 20,}}> Let's GO <Feather name="arrow-right-circle" size={25} color="white"/> </Text>
+      </TouchableOpacity>
+
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   header: {
     flex: 1,
-    backgroundColor: '#09faf4',
+    backgroundColor: 'ivory',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '100%',
-    height: 180,
-    
-  }
+  },
 });
