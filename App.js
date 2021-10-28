@@ -35,7 +35,7 @@ export default function App() {
         Welcome to, {"\n"}
         <Text style={{fontWeight: 'bold', fontSize: 40, color: 'black'}}>DezynMania</Text>
       </Text>
-      <Text style={{fontSize: 18, color: '#7C8C8F', marginLeft: -30,}}>kindly LOGIN, lets get you suited</Text>
+      <Text style={{fontSize: 18, color: '#7C8C8F', marginLeft: -35,}}>kindly <Text style={{color: 'black', fontWeight: 'bold'}}>login</Text>, lets get you suited</Text>
 
       {/* <Text
         style={{
