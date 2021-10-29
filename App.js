@@ -3,7 +3,8 @@ import React from 'react';
 import { Feather } from '@expo/vector-icons';
 import { ImageBackground, ScrollView, StyleSheet, Text, TouchableNativeFeedbackBase, View, Image, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import Welcome from './Welcome'
+import { createStackNavigator } from '@react-navigation/stack';
+import { Welcome }  from './Welcome'
 
 export default function App() {
 
