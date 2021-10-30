@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Feather } from '@expo/vector-icons';
 import { ImageBackground, ScrollView, StyleSheet, Text, TouchableNativeFeedbackBase, View, Image, TouchableOpacity } from 'react-native';
+// import { StatusBar} from 'react-native'
 
 export default function Welcome() {
 
@@ -10,7 +11,7 @@ export default function Welcome() {
   return (
   
     <View style={styles.header}>  
-
+      <StatusBar barStyle = "dark-content" hidden = {false} translucent = {true}/>
       {/*Main Image*/}        
       <Image 
         source={require('./assets/clothes1.jpg')} 
@@ -36,20 +37,6 @@ export default function Welcome() {
         <Text style={{fontWeight: 'bold', fontSize: 40, color: 'black'}}>DezynMania</Text>
       </Text>
       <Text style={{fontSize: 18, color: '#7C8C8F', marginLeft: -35,}}>kindly <Text style={{color: 'black', fontWeight: 'bold'}}>login</Text>, lets get you suited</Text>
-
-      {/* <Text
-        style={{
-          color: 'black',
-          fontSize: 40,
-          fontWeight: 'bold',
-          paddingTop: 5, 
-          // borderBottomColor: '#6AA7B5',
-          // borderBottomWidth: 3,
-          // marginLeft: -80,
-        }}>
-          DezynMania
-      </Text> */}
-
 
       {/*Login Button*/}
       <TouchableOpacity 

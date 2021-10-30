@@ -4,8 +4,8 @@ import { Feather } from '@expo/vector-icons';
 import { ImageBackground, ScrollView, StyleSheet, Text, TouchableNativeFeedbackBase, View, Image, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Welcome  from './Welcome'
-import Login  from './login'
+import Welcome  from './Welcome';
+import Login  from './login';
 
 const Stack = createStackNavigator();
 
