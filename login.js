@@ -24,7 +24,7 @@ export default function Login() {
                 style={{
                   fontSize: 50, 
                   fontWeight: 'bold', 
-                  textShadowColor: '#fce3fa ',
+                  textShadowColor: '#fce3fa',
                   textShadowOffset: {width: 0.5, height: 0.5},
                   textShadowRadius: 4,
                 }}
