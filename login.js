@@ -7,7 +7,7 @@ import { ImageBackground, ScrollView, StyleSheet, Text, TouchableNativeFeedbackB
 import { TextInput } from 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 
-export default function Login() {
+export default function Login({ navigation }) {
 
   // const orange = () => {'#09faf4'}
 
@@ -38,28 +38,30 @@ export default function Login() {
       <View style={styles.userIpt}>
 
           {/*======login Header=====*/}
-        <Text style={{fontSize: 30, fontWeight: 'bold'}}><AntDesign name="login" size={24} color="black"/> Login</Text>
+        <Text style={{fontSize: 30, fontWeight: 'bold'}}>Login</Text>
         <Text style={{color: '#7C8C8F', marginBottom: 50,}}>Enter your details to <Text style={{fontWeight: 'bold'}}> securely login</Text></Text>
 
           {/*---Username input & labels----*/}
-        <Text style={{fontSize: 18,}}>Username: </Text>
+        <Text style={{fontSize: 18,}}>Username </Text>
         <View style={{flexDirection: 'row', marginTop: 15, borderBottomWidth: 1.5, borderBottomColor: '#4d6bb0', width: '90%'}}>
           <Feather name="user" size={24} color="#4d6bb0" />
-          <TextInput style={styles.userInput} placeholder="@Username"></TextInput>
+          <TextInput style={styles.userInput} placeholder="@Username" textContentType={ 'username' }></TextInput>
         </View>
         
             {/*---Password input & labels----*/}
-        <Text style={{fontSize: 18, marginTop: 20,}}>Password: </Text>
+        <Text style={{fontSize: 18, marginTop: 20,}}>Password </Text>
         <View style={{flexDirection: 'row', marginTop: 15, borderBottomWidth: 1.5, borderBottomColor: '#4d6bb0', width: '90%'}}>
           <MaterialCommunityIcons name="shield-key-outline" size={24} color="#4d6bb0" />
-          <TextInput style={styles.userInput} placeholder="Password" secureTextEntry={true}></TextInput>
+          <TextInput style={styles.userInput} placeholder="Password" textContentType={ 'password' } secureTextEntry={true}></TextInput>
         </View>
 
+        {/*--Forgot Password--*/}
         <TouchableOpacity style={{alignItems: 'flex-end', marginTop: 15, marginRight: 30,}}>
           <Text style={{color: '#4d6bb0'}}>forgot Password?</Text>
         </TouchableOpacity>
       </View>
 
+      {/*----Login Botton---*/}
       <View style={styles.loginBtn}>
         <TouchableOpacity 
           style={{
@@ -67,10 +69,16 @@ export default function Login() {
             width: '80%',
             alignItems: 'center',
             paddingVertical: 13,
-            borderRadius: 5,
+            borderRadius: '25%',
           }}
+          onPress = {() => navigation.navigate('Home')}
+        >
+          <Text 
+            style={{ 
+              fontSize: 19, 
+              color: 'white'
+            }} 
           >
-          <Text style={{ fontSize: 18, }}>
             Login
           </Text>
         </TouchableOpacity>
@@ -108,7 +116,7 @@ const styles = StyleSheet.create({
     height: 30,
     paddingLeft: 5,
     paddingBottom: 5,
-    fontSize: 15
+    fontSize: 17,
     // marginTop: 20,
     // marginBottom: 10,
   }, 
