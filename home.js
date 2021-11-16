@@ -1,13 +1,16 @@
-import React from 'react';
-import { StatusBar } from 'expo-status-bar';
+import React from "react";
+import { useState } from 'react';
+
 import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
-import { View, Text, StyleSheet, ScrollView, ImageBackground} from 'react-native';
+import { View, Text, StyleSheet, ScrollView, ImageBackground, Modal} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 
 
-export default function Home(){
+export default function Home( {navigation} ){
+
+    const [modalOpen, setModalVisible] = useState(false);
 
     return(
         <SafeAreaView style={styles.safeArea}>
@@ -58,11 +61,21 @@ export default function Home(){
                 </ScrollView>
             </View>{/*------header scrollview end---------*/}
 
+            {/*------------MODAL VIEW DESCRIPTION---------------*/}
+            <Modal visible={modalOpen} animationType={'slide'}>
+                <SafeAreaView>
+                    <Text>hi there</Text>
+                    <TouchableOpacity onPress={() => setModalVisible(false)}><Text>noiodfosdfhsdfo</Text></TouchableOpacity>
+                </SafeAreaView>
+                
+            </Modal>
+
 
             {/*------main content/ items---------*/}
             <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={{ marginVertical: 10, padding: 10, backgroundColor: 'white', borderRadius: 10, flexDirection: 'row'}}>
-                    <View style={styles.imageStyle}>
+                <TouchableOpacity style={{ marginVertical: 10, padding: 10, backgroundColor: 'white', borderRadius: 10, flexDirection: 'row'}}
+                    onPress={() => setModalVisible(true)}>
+                    <View style={styles.imageStyle} >
                         <ImageBackground
                             imageStyle={{ borderRadius: 10 }}
                             style={{width: '100%', height: 180,}}
@@ -79,15 +92,16 @@ export default function Home(){
                         <Text style={styles.itemsDescribe}>Quality affordable suits from top production company</Text>
                         <View style={{flexDirection: 'row', alignItems: 'flex-end'}}>
                             <Text style={{fontSize: 20, fontWeight: '500'}}>$4,500</Text>
-                            <TouchableOpacity style={styles.cartBtn}>
+                            <TouchableOpacity style={styles.cartBtn} onPress={() => navigation.navigate('Cart')}>
                                 <Text>Add to Cart</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
 
-                </View>
+                </TouchableOpacity>
 
-                <View style={{ marginVertical: 10, padding: 10, backgroundColor: 'white', borderRadius: 10, flexDirection: 'row'}}>
+                <TouchableOpacity style={{ marginVertical: 10, padding: 10, backgroundColor: 'white', borderRadius: 10, flexDirection: 'row'}}
+                    onPress={() => setModalVisible(true)}>
                     <View style={styles.imageStyle}>
                         <ImageBackground
                             imageStyle={{ borderRadius: 10 }}
@@ -105,15 +119,16 @@ export default function Home(){
                         <Text style={styles.itemsDescribe}>Affordable leather shoes. Easy wear, and durable.</Text>
                         <View style={{flexDirection: 'row', alignItems: 'flex-end'}}>
                             <Text style={{fontSize: 20, fontWeight: '500'}}>$1,200</Text>
-                            <TouchableOpacity style={styles.cartBtn}>
+                            <TouchableOpacity style={styles.cartBtn} onPress={() => navigation.navigate('Cart')}>
                                 <Text>Add to Cart</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
 
-                </View>
+                </TouchableOpacity>
 
-                <View style={{ marginVertical: 10, padding: 10, backgroundColor: 'white', borderRadius: 10, flexDirection: 'row'}}>
+                <TouchableOpacity style={{ marginVertical: 10, padding: 10, backgroundColor: 'white', borderRadius: 10, flexDirection: 'row'}}
+                    onPress={() => setModalVisible(true)}>
                     <View style={styles.imageStyle}>
                         <ImageBackground
                             imageStyle={{ borderRadius: 10 }}
@@ -131,15 +146,16 @@ export default function Home(){
                         <Text style={styles.itemsDescribe}>Quality shorts for all activities. Large color variety</Text>
                         <View style={{flexDirection: 'row', alignItems: 'flex-end'}}>
                             <Text style={{fontSize: 20, fontWeight: '500'}}>$2,100</Text>
-                            <TouchableOpacity style={styles.cartBtn}>
+                            <TouchableOpacity style={styles.cartBtn} onPress={() => navigation.navigate('Cart')}>
                                 <Text>Add to Cart</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
 
-                </View>
+                </TouchableOpacity>
 
-                <View style={{ marginVertical: 10, padding: 10, backgroundColor: 'white', borderRadius: 10, flexDirection: 'row'}}>
+                <TouchableOpacity style={{ marginVertical: 10, padding: 10, backgroundColor: 'white', borderRadius: 10, flexDirection: 'row'}}
+                    onPress={() => setModalVisible(true)}>
                     <View style={styles.imageStyle}>
                         <ImageBackground
                             imageStyle={{ borderRadius: 10 }}
@@ -157,15 +173,16 @@ export default function Home(){
                         <Text style={styles.itemsDescribe}>Winter hoodies are here. Grab your now!</Text>
                         <View style={{flexDirection: 'row', alignItems: 'flex-end'}}>
                             <Text style={{fontSize: 20, fontWeight: '500'}}>$3,500</Text>
-                            <TouchableOpacity style={styles.cartBtn}>
+                            <TouchableOpacity style={styles.cartBtn} onPress={() => navigation.navigate('Cart')}>
                                 <Text>Add to Cart</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
 
-                </View>
+                </TouchableOpacity>
 
-                <View style={{ marginVertical: 10, padding: 10, backgroundColor: 'white', borderRadius: 10, flexDirection: 'row'}}>
+                <TouchableOpacity style={{ marginVertical: 10, padding: 10, backgroundColor: 'white', borderRadius: 10, flexDirection: 'row'}}
+                    onPress={() => setModalVisible(true)}>
                     <View style={styles.imageStyle}>
                         <ImageBackground
                             imageStyle={{ borderRadius: 10 }}
@@ -183,13 +200,13 @@ export default function Home(){
                         <Text style={styles.itemsDescribe}>Neat fashion caps for all occasions. Black and white</Text>
                         <View style={{flexDirection: 'row', alignItems: 'flex-end'}}>
                             <Text style={{fontSize: 20, fontWeight: '500'}}>$1,800</Text>
-                            <TouchableOpacity style={styles.cartBtn}>
+                            <TouchableOpacity style={styles.cartBtn} onPress={() => navigation.navigate('Cart')}>
                                 <Text>Add to Cart</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
 
-                </View>
+                </TouchableOpacity>
             </ScrollView>
 
         </SafeAreaView>
