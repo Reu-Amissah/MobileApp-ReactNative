@@ -3,7 +3,9 @@ import { useState } from 'react';
 
 import { Feather } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
-import { View, Text, Modal, StyleSheet, ScrollView, ImageBackground, Dimensions,} from 'react-native';
+import { Entypo } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
+import { View, Text, Modal, StyleSheet, ScrollView, ImageBackground, Dimensions, Image} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 
@@ -95,7 +97,7 @@ export default function Cart({ navigation }){
                             <Text style={{fontSize: 22}}>1</Text>
 
                             <TouchableOpacity style={{marginLeft: 10}}>
-                                <AntDesign name="pluscircle" size={22} color="#3b4d610" />
+                                <AntDesign name="pluscircle" size={22} color="#3b4d61" />
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -175,8 +177,77 @@ export default function Cart({ navigation }){
                         <TouchableOpacity onPress={() => setModalVisible(false)} >
                             <AntDesign name="closesquare" size={30} color="#e6c117" />
                         </TouchableOpacity>
-
+                        <Text style={{color: 'white', fontSize: 22,paddingTop: 5, paddingLeft: 10}}>Choose a Payment Method</Text>
                     </View>
+                     
+                    
+
+                    <View style={{ flexDirection: 'row', backgroundColor: '#e6e6e6', borderRadius: 15, width: '100%', padding: 10, marginTop: 10}}>
+                        <Image 
+                            source={require('./assets/masterCrd.png')}
+                            style={{
+                                width: '30%',
+                                height: 70,
+                                borderRadius: 15,
+                                padding: 10,
+                            }}
+                            ></Image>
+
+                        <View style={{marginLeft: 10, justifyContent: 'space-evenly'}}>
+                            <Text style={{color: 'grey', fontSize: 15, fontWeight: '500'}}>Master Card</Text>
+                            <Text style={{color: 'black', fontWeight: '500', fontSize: 16}}>Personal Account</Text>
+                            <Text style={{color: 'black', fontWeight: '500', fontSize: 16}}>**** **** 7682</Text>
+                        </View>
+
+                        <View style={{flex: 1, alignItems: 'flex-end', justifyContent: 'center', marginRight: 10}}><AntDesign name="checkcircle" size={28} color="#e6c117" /></View>
+                    </View>
+
+                    <View style={{ flexDirection: 'row', backgroundColor: '#e6e6e6', borderRadius: 15, width: '100%', padding: 10, marginTop: 15}}>
+                        <Image 
+                            source={require('./assets/Crd2.png')}
+                            style={{
+                                width: '30%',
+                                height: 70,
+                                borderRadius: 15,
+                                padding: 10,
+                            }}
+                            ></Image>
+
+                        <View style={{marginLeft: 10, justifyContent: 'space-evenly'}}>
+                            <Text style={{color: 'grey', fontSize: 15, fontWeight: '500'}}>Home Card</Text>
+                            <Text style={{color: 'black', fontWeight: '500', fontSize: 16}}>Personal Account</Text>
+                            <Text style={{color: 'black', fontWeight: '500', fontSize: 16}}>**** **** 3261</Text>
+                        </View>
+
+                        <View style={{flex: 1, alignItems: 'flex-end', justifyContent: 'center', marginRight: 10}}><Entypo name="circle" size={28} color="#e6c117" /></View>
+                    </View>
+
+                    
+                    <TouchableOpacity 
+                        style={{
+                            backgroundColor: '#3b4d61', 
+                            width: '100%', 
+                            alignItems: 'center', 
+                            paddingVertical: 20, 
+                            marginTop: 30,
+                            marginBottom: 90,
+                            borderRadius: 10,
+
+                            }}>
+                        <Text style={{fontWeight: '500', fontSize: 16, color: 'white'}}><FontAwesome name="plus" size={18} color="white" />  Add Account</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity 
+                        style={{
+                            backgroundColor: '#e6c117', 
+                            width: '100%', 
+                            alignItems: 'center', 
+                            paddingVertical: 20, 
+                            borderRadius: 10,
+                            }}>
+                        <Text style={{fontWeight: '500', fontSize: 16, color: 'black'}}>Confirm Purchase</Text>
+                    </TouchableOpacity>
+
                 </SafeAreaView>
             </Modal>
 
@@ -195,9 +266,9 @@ const styles = StyleSheet.create ({
         width: '40%',
     },
     mdlModView: {
-        height: '70%',
+        height: '62%',
         marginTop: 'auto',
-        backgroundColor: 'black',
+        backgroundColor: 'rgba(0, 0, 0, 0.93)',
         paddingHorizontal: 20,
         paddingTop: 10,
         borderTopStartRadius: 40,
