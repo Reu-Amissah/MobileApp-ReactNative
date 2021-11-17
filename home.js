@@ -106,7 +106,7 @@ export default function Home( {navigation} ){
                             <View style={{flexDirection: 'row'}}>
                                 <View>
 
-                                    <Text style={styles.itemModMain}>Suits</Text>
+                                    <Text style={styles.itemModMain}>Black Suits</Text>
                                     <Text style={styles.itemSecond}>-by Black Superman</Text>
 
                                 </View>
